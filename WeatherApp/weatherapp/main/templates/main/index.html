@@ -5,12 +5,26 @@
 {% endblock %}
 
 {% block search %}
-    <form action="" method="get">
-        <input name="s" placeholder="Поиск города..." type="search">
-        <button type="submit"><p><i class="fa-solid fa-magnifying-glass search-icon"></i></p></button>
-    </form>
+    <div class="search-form">
+        <form action="" method="get">
+            <input name="s" placeholder="Поиск города..." type="search">
+            <button type="submit"><p><i class="fa-solid fa-magnifying-glass search-icon"></i></p></button>
+        </form>
+    </div>
+    
 {% endblock %}
 
 {% block content %}
-    <div class="city-main-block"></div>
+    <div class="weather-main-block">
+        <div class="weather-main-block-container-one">
+            <h2>Казань</h2>
+        </div>
+        <div class="weather-main-block-container-two">
+                <p>Сейчас 12:44</p>
+        </div>
+        <div class="weather-main-block-container-three">
+            <p class="weather-main-block-container-three-active">+28° Облачно</p>
+            <p class="weather-main-block-container-three-passive">Ощущается как -8</p>
+        </div>
+    </div>
 {% endblock %}
