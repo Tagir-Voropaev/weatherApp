@@ -1,2 +1,2 @@
-# weatherApp
+# Weather app
  weather online
