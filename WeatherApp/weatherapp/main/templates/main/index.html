@@ -6,8 +6,9 @@
 
 {% block search %}
     <div class="search-form">
-        <form action="" method="get">
-            <input name="s" placeholder="Поиск города..." type="search">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.name }}
             <button type="submit"><p><i class="fa-solid fa-magnifying-glass search-icon"></i></p></button>
         </form>
     </div>
@@ -20,107 +21,31 @@
             <h2>{{ info.city }}</h2>
         </div>
         <div class="main-container-two">
-                <p>Now {{ info.time }} GMT+4</p>
+                <p>Now {{ general_info.time }} GMT+4</p>
         </div>
         <div class="main-container-three">
-            <p class="main-container-three-active">{{ info.temp}}° {{ info.description}}</p>
-            <p class="main-container-three-passive">Feels like {{ info.feels_like }}°</p>
+            <p class="main-container-three-active">12° cloudy</p>
+            <p class="main-container-three-passive">Feels like °</p>
         </div>
     </div>
     <div class="scroll">
         <div class="scroll-wrapper">
             <div class="scroll-week">
+                {% for info in all_info %}
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>London, UK</h6>
-                        <p>{{ info.date }}</p>
+                        <h6>{{ info.city }}</h6>
+                        <p>{{ general_info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
-                        <h6>{{ london.temp_max }}°</h6>
-                        <p>-2°</p>
+                        <h6>{{ info.temp_max }}°</h6>
+                        <p>{{ info.temp_min }}°</p>
                     </div>
                     <div class="scroll-state">
-                        <p>Небольшой дождь</p>
+                        <p>{{ info.description }}</p>
                     </div>
                 </div>
-                <div class="scroll-day">
-                    <div class="scroll-date">
-                        <h6>Tokyo, JP</h6>
-                        <p>{{ info.date }}</p>
-                    </div>
-                    <div class="scroll-degrees">
-                        <h6>+2°</h6>
-                        <p>-2°</p>
-                    </div>
-                    <div class="scroll-state">
-                        <p>Облачно</p>
-                    </div>
-                </div>
-                <div class="scroll-day">
-                    <div class="scroll-date">
-                        <h6>New York, US</h6>
-                        <p>{{ info.date }}</p>
-                    </div>
-                    <div class="scroll-degrees">
-                        <h6>+2°</h6>
-                        <p>-2°</p>
-                    </div>
-                    <div class="scroll-state">
-                        <p>Облачно</p>
-                    </div>
-                </div>
-                <div class="scroll-day">
-                    <div class="scroll-date">
-                        <h6>Moscow, RU</h6>
-                        <p>{{ info.date }}</p>
-                    </div>
-                    <div class="scroll-degrees">
-                        <h6>+2°</h6>
-                        <p>-2°</p>
-                    </div>
-                    <div class="scroll-state">
-                        <p>Облачно</p>
-                    </div>
-                </div>
-                <div class="scroll-day">
-                    <div class="scroll-date">
-                        <h6>Paris, FR</h6>
-                        <p>{{ info.date }}</p>
-                    </div>
-                    <div class="scroll-degrees">
-                        <h6>+2°</h6>
-                        <p>-2°</p>
-                    </div>
-                    <div class="scroll-state">
-                        <p>Облачно</p>
-                    </div>
-                </div>
-                <div class="scroll-day">
-                    <div class="scroll-date">
-                        <h6>Dubai, AE</h6>
-                        <p>{{ info.date }}</p>
-                    </div>
-                    <div class="scroll-degrees">
-                        <h6>+2°</h6>
-                        <p>-2°</p>
-                    </div>
-                    <div class="scroll-state">
-                        <p>Облачно</p>
-                    </div>
-                </div>
-                <div class="scroll-day">
-                    <div class="scroll-date">
-                        <h6>Rome, IT</h6>
-                        <p>{{ info.date }}</p>
-                    </div>
-                    <div class="scroll-degrees">
-                        <h6>+2°</h6>
-                        <p>-2°</p>
-                    </div>
-                    <div class="scroll-state">
-                        <p>Облачно</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="scroll-button-box">
