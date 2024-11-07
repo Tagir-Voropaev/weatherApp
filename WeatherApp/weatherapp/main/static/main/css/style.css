@@ -50,7 +50,7 @@ button {
   max-width: 1280px;
   min-height: 100%;
 }
-.weather-main-block{
+.main{
   position: relative;
   background-color: #a8caff;
   width: 50%;
@@ -66,47 +66,158 @@ button {
   transform: scale(1.02);
   box-shadow: 0px 5px 10px 0px #cccccc;
   transition: all 0.1s ease;
-
 }
-.weather-main-block:hover{
+.main:hover{
   transform: scale(1.0);
   box-shadow: inset 0px 5px 10px 0px #cccccc;
   transition: all 0.1s ease;
 
 }
-.weather-main-block-container-one{
+.main-container-one{
   position: relative;
   display: flex;
   justify-content: center;
 }
-.weather-main-block-container-one h2{
+.main-container-one h2{
   position: relative;
   margin: auto;
-  font-size: 1.4em;
+  font-size: 28px;
   margin-top: 10px;
 }
-.weather-main-block-container-two{
-  font-size: 1.8em;
+.main-container-two{
+  font-size: 30px;
   display: flex;
   justify-content: center;
 }
-.weather-main-block-container-two p{
+.main-container-two p{
   margin: 0;
 }
-.weather-main-block-container-three{
+.main-container-three{
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 20px;
 }
-.weather-main-block-container-three p{
+.main-container-three p{
   margin: auto;
 }
-.weather-main-block-container-three-active{
-  font-size: 1.4em;
+.main-container-three-active{
+  font-size: 24px;
   
 }
-.weather-main-block-container-three-passive{
-  font-size: 1em;
+.main-container-three-passive{
+  font-size: 16px;
   bottom: 10px;
+  color: #8e9ea3;
 }
+
+
+
+.scroll {
+  width: 70%;
+  margin: auto;
+  margin-top: 70px;
+  height: 240px;
+  width: 680px;
+  overflow: hidden;
+
+}
+.scroll-wrapper{
+  position: relative;
+  width: 100%;
+  height: 160px;
+}
+.scroll-week{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-shrink: 0;
+  height: 160px;
+}
+
+
+.scroll-date h6{
+  font-weight: 400;
+  font-size: 22px;
+}
+.scroll-date p{
+  color: #9ea0a8;
+  font-size: 16px;
+}
+
+.scroll-degrees h6{
+  font-weight: 400;
+  font-size: 18px;
+}
+.scroll-degrees p{
+  color: #9ea0a8;
+  font-size: 12px;
+}
+
+.scroll-state{
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.scroll-state p{
+  color:#9ea0a8;
+}
+.scroll-date h6, p, .scroll-degrees h6, p, .scroll-state p{
+  margin: 0;
+}
+
+.scroll-day{
+  border: 1px solid #a8caff;
+  border-radius: 10px;
+  width: 140px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.scroll-day:not(:first-child){
+  margin-left: 40px;
+}
+
+.scroll-button-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 80px;
+}
+.scroll-button{
+  position: relative;
+  border-radius: 100%;
+  margin: 0 10px;
+}
+
+.scroll-button-left:hover{
+  transform: scale(-1.0);
+  box-shadow: inset 0px 5px 10px 0px #cccccc;
+  transition: all 0.1s ease;
+}
+.scroll-button-left{
+  transform: scale(-1.02);
+  box-shadow: 0px 5px 10px 0px #cccccc;
+  transition: all 0.1s ease;
+}
+.scroll-button-right:hover{
+  transform: scale(1.0);
+  box-shadow: inset 0px 5px 10px 0px #cccccc;
+  transition: all 0.1s ease;
+}
+.scroll-button-right{
+  transform: scale(1.02);
+  box-shadow: 0px 5px 10px 0px #cccccc;
+  transition: all 0.1s ease;
+}
+.button-icon{
+  color: #fff;
+}
+
