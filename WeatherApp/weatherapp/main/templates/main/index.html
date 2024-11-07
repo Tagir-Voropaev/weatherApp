@@ -17,14 +17,14 @@
 {% block content %}
     <div class="main">
         <div class="main-container-one">
-            <h2>Казань</h2>
+            <h2>{{ info.city }}</h2>
         </div>
         <div class="main-container-two">
-                <p>Сейчас 12:44</p>
+                <p>Now {{ info.time }} GMT+4</p>
         </div>
         <div class="main-container-three">
-            <p class="main-container-three-active">+28° Облачно</p>
-            <p class="main-container-three-passive">Ощущается как -8°</p>
+            <p class="main-container-three-active">{{ info.temp}}° {{ info.description}}</p>
+            <p class="main-container-three-passive">Feels like {{ info.feels_like }}°</p>
         </div>
     </div>
     <div class="scroll">
@@ -32,11 +32,11 @@
             <div class="scroll-week">
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>Сегодня</h6>
-                        <p>7 ноября</p>
+                        <h6>London, UK</h6>
+                        <p>{{ info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
-                        <h6>+2°</h6>
+                        <h6>{{ london.temp_max }}°</h6>
                         <p>-2°</p>
                     </div>
                     <div class="scroll-state">
@@ -45,8 +45,8 @@
                 </div>
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>Пт</h6>
-                        <p>8 ноября</p>
+                        <h6>Tokyo, JP</h6>
+                        <p>{{ info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
                         <h6>+2°</h6>
@@ -58,8 +58,8 @@
                 </div>
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>Сб</h6>
-                        <p>9 ноября</p>
+                        <h6>New York, US</h6>
+                        <p>{{ info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
                         <h6>+2°</h6>
@@ -71,8 +71,8 @@
                 </div>
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>Вс</h6>
-                        <p>10 ноября</p>
+                        <h6>Moscow, RU</h6>
+                        <p>{{ info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
                         <h6>+2°</h6>
@@ -84,8 +84,8 @@
                 </div>
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>Пн</h6>
-                        <p>11 ноября</p>
+                        <h6>Paris, FR</h6>
+                        <p>{{ info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
                         <h6>+2°</h6>
@@ -97,8 +97,8 @@
                 </div>
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>Вт</h6>
-                        <p>12 ноября</p>
+                        <h6>Dubai, AE</h6>
+                        <p>{{ info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
                         <h6>+2°</h6>
@@ -110,8 +110,8 @@
                 </div>
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>Ср</h6>
-                        <p>13 ноября</p>
+                        <h6>Rome, IT</h6>
+                        <p>{{ info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
                         <h6>+2°</h6>

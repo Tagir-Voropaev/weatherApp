@@ -117,15 +117,15 @@ button {
   width: 70%;
   margin: auto;
   margin-top: 70px;
-  height: 240px;
-  width: 680px;
+  height: 280px;
+  width: 640px;
   overflow: hidden;
 
 }
 .scroll-wrapper{
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 180px;
 }
 .scroll-week{
   position: absolute;
@@ -133,7 +133,7 @@ button {
   flex-direction: row;
   justify-content: space-between;
   flex-shrink: 0;
-  height: 160px;
+  height: 180px;
 }
 
 
@@ -171,8 +171,8 @@ button {
 .scroll-day{
   border: 1px solid #a8caff;
   border-radius: 10px;
-  width: 140px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -181,7 +181,7 @@ button {
   padding-bottom: 5px;
 }
 .scroll-day:not(:first-child){
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .scroll-button-box{
@@ -189,7 +189,7 @@ button {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 80px;
+  height: 100px;
 }
 .scroll-button{
   position: relative;
@@ -220,4 +220,6 @@ button {
 .button-icon{
   color: #fff;
 }
-
+.main{
+  display: none;
+}
