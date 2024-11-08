@@ -7,8 +7,9 @@
 {% block search %}
     <div class="search-form">
         <form action="" method="post">
-            {% csrf_token %}
-            {{ form.name }}
+            <input type="text" class="input_form" name = "city" id = "city" placeholder = "Find the city">
+           
+           
             <button type="submit"><p><i class="fa-solid fa-magnifying-glass search-icon"></i></p></button>
         </form>
     </div>
@@ -17,35 +18,35 @@
 
 {% block content %}
     <div class="main">
+        
         <div class="main-container-one">
-            <h2>{{ info.city }}</h2>
+            <h2></h2>
         </div>
         <div class="main-container-two">
-                <p>Now {{ general_info.time }} GMT+4</p>
+                <p>Now 'time' GMT+4</p>
         </div>
         <div class="main-container-three">
             <p class="main-container-three-active">12° cloudy</p>
             <p class="main-container-three-passive">Feels like °</p>
         </div>
+        
     </div>
     <div class="scroll">
         <div class="scroll-wrapper">
             <div class="scroll-week">
-                {% for info in all_info %}
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>{{ info.city }}</h6>
-                        <p>{{ general_info.date }}</p>
+                        <h6>Kazan</h6>
+                        <p>11.08</p>
                     </div>
                     <div class="scroll-degrees">
-                        <h6>{{ info.temp_max }}°</h6>
-                        <p>{{ info.temp_min }}°</p>
+                        <h6>+2°</h6>
+                        <p>-3°</p>
                     </div>
                     <div class="scroll-state">
-                        <p>{{ info.description }}</p>
+                        <p>Cloudy</p>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
         <div class="scroll-button-box">
