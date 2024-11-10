@@ -1,2 +1,6 @@
 # Weather app
- weather online
+In this project i used:
+* Python
+* Django Framework
+* HTML, CSS, JAVASCRIPT
+* Openweathermap API 
