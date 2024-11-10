@@ -7,9 +7,8 @@
 {% block search %}
     <div class="search-form">
         <form action="" method="post">
-            <input type="text" class="input_form" name = "city" id = "city" placeholder = "Find the city">
-           
-           
+            {% csrf_token %}
+            {{ form.city_name_form }}
             <button type="submit"><p><i class="fa-solid fa-magnifying-glass search-icon"></i></p></button>
         </form>
     </div>
@@ -17,36 +16,52 @@
 {% endblock %}
 
 {% block content %}
-    <div class="main">
+    <div class="main" style="display: {{ search_state }}">
         
         <div class="main-container-one">
-            <h2></h2>
+            {% if searching_city|length == 0 %}
+            <h2>{{ default_cities.0.city }}</h2>
+            {% else %}
+            <h2>{{ searching_city.city }}</h2>
+
+            {% endif %}
+            
         </div>
         <div class="main-container-two">
-                <p>Now 'time' GMT+4</p>
+            <p>Now {{ general_info.time }} GMT+4</p>
         </div>
         <div class="main-container-three">
-            <p class="main-container-three-active">12° cloudy</p>
-            <p class="main-container-three-passive">Feels like °</p>
+            
+            {% if searching_city|length == 0 %}
+            <p class="main-container-three-active">{{ default_cities.0.temp }}° {{ default_cities.0.description }}</p>
+            <p class="main-container-three-passive">Feels like {{ default_cities.0.feels_like }}°</p>
+            {% else %}
+            <p class="main-container-three-active">{{ searching_city.temp }}° {{ searching_city.description }}</p>
+            <p class="main-container-three-passive">Feels like {{ searching_city.feels_like }}°</p>
+            {% endif %}
+           
         </div>
         
     </div>
     <div class="scroll">
         <div class="scroll-wrapper">
             <div class="scroll-week">
+                {% for city_ in default_cities %}
                 <div class="scroll-day">
                     <div class="scroll-date">
-                        <h6>Kazan</h6>
-                        <p>11.08</p>
+                        <h6>{{ city_.city }}</h6>
+                        <p>{{ general_info.date }}</p>
                     </div>
                     <div class="scroll-degrees">
-                        <h6>+2°</h6>
-                        <p>-3°</p>
+                        <h6>{{ city_.temp }}°</h6>
+                        <img src="{{ city_.icon }}" alt="">
                     </div>
                     <div class="scroll-state">
-                        <p>Cloudy</p>
+                        <p>{{ city_.description }}</p>
                     </div>
                 </div>
+                {% endfor %}
+
             </div>
         </div>
         <div class="scroll-button-box">

@@ -79,6 +79,7 @@ button {
   justify-content: center;
 }
 .main-container-one h2{
+  text-transform: uppercase;
   position: relative;
   margin: auto;
   font-size: 28px;
@@ -146,14 +147,19 @@ button {
   font-size: 16px;
 }
 
+
+.scroll-degrees{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
 .scroll-degrees h6{
   font-weight: 400;
-  font-size: 18px;
+  font-size: 36px;
 }
-.scroll-degrees p{
-  color: #9ea0a8;
-  font-size: 12px;
-}
+
 
 .scroll-state{
   height: 40px;
@@ -222,4 +228,5 @@ button {
   color: #fff;
 }
 .main{
+
 }
